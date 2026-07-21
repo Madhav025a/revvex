@@ -1,24 +1,79 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav, StickyBookButton } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import {
+  SocialProof, Problem, Solution, HowItWorks, AiDeepDive,
+  Features, Results, Industries, BeforeAfter, Testimonials,
+  CaseStudies, FAQ, FinalCta,
+} from "@/components/site/Sections";
+import { Footer } from "@/components/site/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Revvex Digital — AI-Powered Websites That Book Clients" },
+      {
+        name: "description",
+        content:
+          "We build AI-powered websites that turn visitors into booked consultations — for law firms, trades, local businesses, and B2B companies.",
+      },
+      { property: "og:title", content: "Revvex Digital — AI-Powered Websites That Book Clients" },
+      {
+        property: "og:description",
+        content:
+          "AI-powered websites that generate qualified appointments automatically — even while you sleep.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Revvex Digital",
+          description:
+            "AI-powered websites that generate qualified appointments for law firms, trades, local businesses, and B2B companies.",
+          areaServed: "US",
+          serviceType: [
+            "AI-Powered Websites",
+            "AI Appointment Booking",
+            "SEO",
+            "Review Automation",
+            "CRM Integration",
+          ],
+        }),
+      },
+    ],
+  }),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen">
+      <Nav />
+      <main>
+        <Hero />
+        <SocialProof />
+        <Problem />
+        <Solution />
+        <HowItWorks />
+        <AiDeepDive />
+        <Features />
+        <Results />
+        <Industries />
+        <BeforeAfter />
+        <Testimonials />
+        <CaseStudies />
+        <FAQ />
+        <FinalCta />
+      </main>
+      <Footer />
+      <StickyBookButton />
     </div>
   );
 }
