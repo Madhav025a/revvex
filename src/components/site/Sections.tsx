@@ -580,19 +580,8 @@ export function FAQ() {
 
 /* ---------- Final CTA + Calendar ---------- */
 export function FinalCta() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [sent, setSent] = useState(false);
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-    setSent(true);
-  };
-  const slots = ["Tue 10:00", "Tue 2:30", "Wed 9:30", "Wed 1:00", "Thu 11:00", "Thu 3:30", "Fri 10:00", "Fri 2:00"];
-  const [slot, setSlot] = useState<string | null>(null);
-
   return (
+
     <section id="book" className="py-24 relative">
       <div className="mx-auto max-w-7xl px-6">
         <div className="relative rounded-3xl overflow-hidden glass-strong p-8 md:p-14">
