@@ -419,11 +419,11 @@ export function BeforeAfter() {
               <div className="hidden md:block text-xs uppercase tracking-widest text-muted-foreground">Old website</div>
               <div className="hidden md:block text-xs uppercase tracking-widest text-brand">Revvex</div>
               {rows.map((r) => (
-                <>
+                <div key={r[0]} className="contents">
                   <div className="mt-4 font-medium">{r[0]}</div>
                   <div className="mt-1 md:mt-4 text-sm text-muted-foreground line-through">{r[1]}</div>
                   <div className="mt-1 md:mt-4 text-sm">{r[2]}</div>
-                </>
+                </div>
               ))}
             </div>
           </div>
