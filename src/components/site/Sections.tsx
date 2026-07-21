@@ -580,19 +580,8 @@ export function FAQ() {
 
 /* ---------- Final CTA + Calendar ---------- */
 export function FinalCta() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [sent, setSent] = useState(false);
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-    setSent(true);
-  };
-  const slots = ["Tue 10:00", "Tue 2:30", "Wed 9:30", "Wed 1:00", "Thu 11:00", "Thu 3:30", "Fri 10:00", "Fri 2:00"];
-  const [slot, setSlot] = useState<string | null>(null);
-
   return (
+
     <section id="book" className="py-24 relative">
       <div className="mx-auto max-w-7xl px-6">
         <div className="relative rounded-3xl overflow-hidden glass-strong p-8 md:p-14">
@@ -626,73 +615,16 @@ export function FinalCta() {
             </div>
 
             <Reveal delay={150}>
-              <div className="rounded-2xl bg-background/60 border border-border p-6">
-                {!sent ? (
-                  <form onSubmit={submit} className="space-y-4">
-                    <div className="text-sm font-medium">Pick a time</div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {slots.map((s) => (
-                        <button
-                          key={s}
-                          type="button"
-                          onClick={() => setSlot(s)}
-                          className={`rounded-lg border px-3 py-2 text-sm transition ${
-                            slot === s
-                              ? "bg-gradient-brand text-primary-foreground border-transparent"
-                              : "border-border hover:border-brand/60"
-                          }`}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="grid grid-cols-1 gap-3 pt-2">
-                      <input
-                        value={name}
-                        onChange={(e) => setName(e.target.value.slice(0, 80))}
-                        placeholder="Full name"
-                        required
-                        className="w-full rounded-lg bg-background border border-border px-3 py-2.5 text-sm outline-none focus:border-brand"
-                      />
-                      <input
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value.slice(0, 200))}
-                        placeholder="Work email"
-                        type="email"
-                        required
-                        className="w-full rounded-lg bg-background border border-border px-3 py-2.5 text-sm outline-none focus:border-brand"
-                      />
-                      <input
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value.slice(0, 40))}
-                        placeholder="Phone (optional)"
-                        className="w-full rounded-lg bg-background border border-border px-3 py-2.5 text-sm outline-none focus:border-brand"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={!slot}
-                      className="w-full rounded-lg bg-gradient-brand px-4 py-3 text-sm font-medium text-primary-foreground shadow-glow disabled:opacity-50"
-                    >
-                      {slot ? `Confirm ${slot}` : "Select a time to continue"}
-                    </button>
-                    <p className="text-xs text-muted-foreground">
-                      By booking you agree to our terms. We never share your info.
-                    </p>
-                  </form>
-                ) : (
-                  <div className="text-center py-8 animate-rise">
-                    <div className="mx-auto h-14 w-14 rounded-full bg-gradient-brand flex items-center justify-center shadow-glow">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary-foreground" />
-                      </svg>
-                    </div>
-                    <div className="mt-4 text-xl font-semibold">You're booked for {slot}</div>
-                    <div className="mt-2 text-sm text-muted-foreground">
-                      A confirmation is on its way to {email}. Talk soon.
-                    </div>
-                  </div>
-                )}
+              <div className="rounded-2xl bg-background/60 border border-border p-2 sm:p-3 overflow-hidden">
+                <iframe
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ogVSAO3RczY-cRVOLtL4Z4x_afy9wOqGGH3lCaW_6iwyA_fJ0GrrPuoTxfL20PdAlrgVi4bPh?gv=true"
+                  title="Book a strategy call with Revvex Digital"
+                  loading="lazy"
+                  className="w-full rounded-xl bg-white"
+                  style={{ border: 0, minHeight: 600 }}
+                  height={600}
+                  frameBorder={0}
+                />
               </div>
             </Reveal>
           </div>
