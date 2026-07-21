@@ -103,7 +103,7 @@ export function Solution() {
             <Reveal key={c.title} delay={i * 60}>
               <div className="group relative h-full glass rounded-2xl p-6 overflow-hidden hover:-translate-y-1 transition-all">
                 <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-brand opacity-0 group-hover:opacity-20 blur-2xl transition-opacity" />
-                <div className="h-11 w-11 rounded-xl bg-gradient-brand/15 border border-border flex items-center justify-center text-brand">
+                <div className="h-11 w-11 rounded-xl bg-brand/10 border border-border flex items-center justify-center text-brand">
                   <c.icon size={20} />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">{c.title}</h3>
@@ -272,7 +272,7 @@ export function Features() {
           {items.map((f, i) => (
             <Reveal key={f.t} delay={i * 40}>
               <div className="group glass rounded-2xl p-6 h-full hover:-translate-y-1 hover:border-brand/50 transition-all">
-                <div className="h-10 w-10 rounded-lg bg-gradient-brand/15 border border-border flex items-center justify-center text-brand group-hover:scale-110 transition-transform">
+                <div className="h-10 w-10 rounded-lg bg-brand/10 border border-border flex items-center justify-center text-brand group-hover:scale-110 transition-transform">
                   <f.i size={18} />
                 </div>
                 <h3 className="mt-4 font-semibold">{f.t}</h3>
@@ -353,7 +353,7 @@ export function Industries() {
           {items.map((it, i) => (
             <Reveal key={it.t} delay={i * 50}>
               <div className="glass rounded-2xl p-6 flex flex-col items-center text-center hover:-translate-y-1 hover:border-brand/50 transition-all">
-                <div className="h-12 w-12 rounded-xl bg-gradient-brand/15 border border-border flex items-center justify-center text-brand">
+                <div className="h-12 w-12 rounded-xl bg-brand/10 border border-border flex items-center justify-center text-brand">
                   <it.i size={22} />
                 </div>
                 <div className="mt-4 font-medium">{it.t}</div>

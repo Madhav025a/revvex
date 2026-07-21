@@ -30,7 +30,7 @@ function AiMockup() {
             <div className="h-6 w-3/4 rounded bg-muted/70" />
             <div className="h-3 w-full rounded bg-muted/50" />
             <div className="h-3 w-5/6 rounded bg-muted/50" />
-            <div className="h-24 rounded-lg bg-gradient-brand/20 border border-border grid-bg" />
+            <div className="h-24 rounded-lg bg-brand/15 border border-border grid-bg" />
             <div className="grid grid-cols-2 gap-2">
               <div className="h-16 rounded-lg bg-muted/40" />
               <div className="h-16 rounded-lg bg-muted/40" />
@@ -102,7 +102,7 @@ function AiMockup() {
       {/* Floating cards */}
       <FloatingCard className="absolute -left-6 top-16 animate-float" style={{ animationDelay: "0s" }}>
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-lg bg-gradient-brand/20 border border-border flex items-center justify-center">
+          <div className="h-9 w-9 rounded-lg bg-brand/15 border border-border flex items-center justify-center">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-brand">
               <path d="M12 2v20M2 12h20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
