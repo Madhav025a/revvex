@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "AI-powered websites that generate qualified appointments automatically — even while you sleep.",
+          "We build AI-powered websites that turn visitors into booked consultations — for law firms, trades, local businesses, and B2B companies.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
